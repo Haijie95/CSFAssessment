@@ -1,0 +1,25 @@
+<form >
+  <table>
+    <tr>
+      <td><h1>Search Result</h1></td>
+      <td><button [routerLink]="['/']">Back</button></td>
+    </tr>
+  </table>
+
+
+    <table *ngFor="let r of reviews; let i = index">
+      <tr>
+        <td><img src="{{r.image}}" height="200" width="300"></td>
+          <td>
+          <table>
+            <tr><a href="{{r.reviewURL}}" >{{r.title}} {{r.rating}} </a></tr>
+            <tr>{{r.headline}}</tr>
+              <tr>{{r.summary}}</tr>
+              <tr>Comments: {{r.count}}</tr>
+            <tr align="right"><button type="button" (click)="postcomment(i)">Comment</button></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</form>
+
